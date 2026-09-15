@@ -1,0 +1,11 @@
+# DSH-Breaker bundle patch: inserts the plugin into a profile's layer stack.
+#
+# DSH-Breaker 不改动 system-prompt。模式（人格与规则）由 agent preset 承担，
+# 每个模式是一份独立的组合文件，互不渗透。
+- insert:
+    - id: dsh-breaker
+      name: 'dsh-breaker'
+      config:
+        enabled: true
+        autoApplyOnStart: true
+        verbose: false

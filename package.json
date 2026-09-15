@@ -1,0 +1,67 @@
+{
+  "name": "dsh-breaker",
+  "version": "2.0.0",
+  "description": "DSH-Breaker：DeepSeek Harness 能力增强面板。放宽工具上限、强化 AGENTS.md 规范读取、消除 Windows 子进程黑框，并内置可自由增删改的 agent 模式。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-breaker": "bin/dsh-breaker.js"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "presets",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugins",
+    "deepseek-harness",
+    "capability",
+    "tool-limits",
+    "agents-md",
+    "windows-hide-console",
+    "agent-presets"
+  ],
+  "author": "XJYdemons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XJYdemons/dsh-breaker.git"
+  },
+  "homepage": "https://github.com/XJYdemons/dsh-breaker#readme",
+  "bugs": {
+    "url": "https://github.com/XJYdemons/dsh-breaker/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dshTarget": "0.1.5-rc.1"
+}
